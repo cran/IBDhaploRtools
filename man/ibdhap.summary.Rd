@@ -1,8 +1,8 @@
-\name{ibdhap.summary}
-\alias{ibdhap.summary}
+\name{ibdhap.summary.calls}
+\alias{ibdhap.summary.calls}
 
 \title{
-  ibdhap summary
+  ibdhap summary of called states
 }
 \description{
   Summarizes the data created by ibdhap.make.states by
@@ -12,13 +12,12 @@ haplotypes/genotypes or on an individual pairing.
 }
 
 \usage{
-ibdhap.summary(states.dat, data.type = c("h", "g", "r"), position = NA)
+ibdhap.summary.calls(calls, data.type = c("h", "g", "r"), position = NA)
 }
 
-\arguments{
-  \item{states.dat}{ The data.frame created from running ibdhap.make.states on ibd_haplo
-    output. 
-}
+\arguments{ \item{calls}{ The data.frame created from running
+  ibdhap.make.calls on ibd_haplo output.  }
+  
   \item{data.type}{
     "h" : haplotypic data
     "g" : genotypic data (or hap data ran as genotypic)
@@ -63,8 +62,8 @@ data(qibd_phased)
 data(ids_phased)
 data(trueibd_phased)
 
-phased.gold <- ibdhap.make.states( qibd.file  = qibd_phased,
+phased.gold <- ibdhap.make.calls( qibd.file  = qibd_phased,
                    ids.file= ids_phased, cutoff = 0.8)
 
-summary.phased <- ibdhap.summary( phased.gold, data.type="h")
+summary.phased <- ibdhap.summary.calls( phased.gold, data.type="h")
 }

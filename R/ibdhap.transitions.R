@@ -1,9 +1,9 @@
-ibdhap.transitions <-function( states.dat, data.type = c("h", "g","r")) { 
+ibdhap.transitions <-function( calls, data.type = c("h", "g","r")) { 
 
 
 #define parameters based on haplotype/genotype/or reduced data
 if(length(data.type)>1){ stop("data.type improperly indicated, please see ?ibdhap.transitions")}
-else if( is.element("h", data.type)){ no.ibd.ind = 15}
+else if( is.element("h", data.type)){no.ibd.ind = 15}
 else if( is.element("g", data.type)){no.ibd.ind = 9}
 else if( is.element("r", data.type)){no.ibd.ind = 4}
 else{ stop("data.type improperly indicated, please see ?ibdhap.transitions")}
@@ -16,9 +16,9 @@ transition.counts<-matrix(0, nrow = state.num, ncol = state.num)
 
 
 #get the counts for each row, and add them up
-   for(i in 1:ncol(states.dat)){
+   for(i in 1:ncol(calls)){
 
-      temp.states<-as.numeric(unlist(states.dat[,i]))
+      temp.states<-as.numeric(unlist(calls[,i]))
 
       #remove the zeros
       temp.states<-removezeros(temp.states)

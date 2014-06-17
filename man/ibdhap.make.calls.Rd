@@ -1,16 +1,17 @@
-\name{ibdhap.make.states}
-\alias{ibdhap.make.states}
+\name{ibdhap.make.calls}
+\alias{ibdhap.make.calls}
 
-\title{ ibdhap.make.states }
-\description{
- Stores and simplifies the qibd files created by IBD Haplo by "calling" a marker to be in an ibd state if it's marginal
-probability meets some "cutoff" value, a zero or "no call" is assigned
-to a marker in which no single state meets the value assigned to "cutoff". The R data.frame that this
-function creates is expected by other functions in this package.
-}
+\title{ ibdhap.make.calls }
+
+\description{ Stores and simplifies the qibd files created by IBD Haplo
+by "calling" a marker to be in an ibd state if it's marginal probability
+meets some "cutoff" value, a zero or "no call" is assigned to a marker
+in which no single state meets the value assigned to "cutoff". The R
+data.frame that this function creates is expected by other functions in
+this package.  }
 
 \usage{
-ibdhap.make.states(qibd.filename = NULL, ids.filename = NULL, qibd.file
+ibdhap.make.calls(qibd.filename = NULL, ids.filename = NULL, qibd.file
 = NULL, ids.file = NULL, cutoff = 0.8)
 }
 
@@ -65,13 +66,13 @@ M.D. Brown
 data(qibd_phased)
 data(ids_phased)
 
-phased.gold <- ibdhap.make.states( qibd.file  = qibd_phased,
+phased.gold <- ibdhap.make.calls( qibd.file  = qibd_phased,
                    ids.file= ids_phased, cutoff = 0.8)
 
 ## alternatively, specify the file location, e.g.
 ## qibd.filename <- '~/Documents/qibd_unphased_2011.gold'
 ## ids.filename <- '~/Documents/ids_unphased_2011.gold'
-## phased.gold <- ibdhap.make.states( qibd.filename = qibd.filename, 
+## phased.gold <- ibdhap.make.calls( qibd.filename = qibd.filename, 
 ##                   ids.filename = ids.filename, cutoff = 0.8)
 
 }

@@ -59,7 +59,7 @@ ibdhap.barplot(x, data.type = c("h", "g", "r"), col = c("grey", "red",
 data(qibd_phased)
 data(ids_phased)
 
-phased.gold <- ibdhap.make.states( qibd.file  = qibd_phased,
+phased.gold <- ibdhap.make.calls( qibd.file  = qibd_phased,
                    ids.file= ids_phased, cutoff = 0.8)
 
 par(mfrow=c(4,1)) 

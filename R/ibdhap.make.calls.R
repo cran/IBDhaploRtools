@@ -1,7 +1,7 @@
 ## modified 3 Feb 2013
 ## this version allows for a more general form of inputs
 
-ibdhap.make.states <-function( qibd.filename = NULL, ids.filename = NULL,
+ibdhap.make.calls <-function( qibd.filename = NULL, ids.filename = NULL,
                               qibd.file = NULL, ids.file = NULL, cutoff = .8){
 
   ## information form qibd file

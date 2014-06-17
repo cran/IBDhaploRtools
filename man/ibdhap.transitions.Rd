@@ -8,11 +8,11 @@
 state switches along the chromosome.
 }
 \usage{
-ibdhap.transitions(states.dat, data.type = c("h", "g", "r"))
+ibdhap.transitions(calls, data.type = c("h", "g", "r"))
 }
 
 \arguments{
-  \item{states.dat}{The data.frame created from running ibdhap.make.states on ibd_haplo
+  \item{calls}{The data.frame created from running ibdhap.make.calls on ibd_haplo
     output. 
 }
   \item{data.type}{
@@ -48,7 +48,7 @@ data(qibd_phased)
 data(ids_phased)
 data(trueibd_phased)
 
-phased.gold <- ibdhap.make.states( qibd.file  = qibd_phased,
+phased.gold <- ibdhap.make.calls( qibd.file  = qibd_phased,
                    ids.file= ids_phased, cutoff = 0.8)
 transitions.phased <- ibdhap.transitions(phased.gold, data.type="h")
 }
