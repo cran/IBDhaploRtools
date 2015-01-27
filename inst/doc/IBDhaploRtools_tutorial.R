@@ -72,7 +72,7 @@ ibdhap.names( ids.file = ids_phased )
 ## data( trueibd_phased )
 
 ## To load your own dataset,
-## my.trueibd.filename <-`~/Documents/outfifteen.txt'
+## my.trueibd.filename <-`~/Documents/fgl2ibdoutput.txt'
 ## ibdhap.make.true( true.filename = my.trueibd.filename )
 
 
